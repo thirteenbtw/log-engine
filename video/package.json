@@ -1,0 +1,12 @@
+{
+  "name": "log-engine-video",
+  "private": true,
+  "description": "Рендер демо-ролика log-engine (HTML -> MP4)",
+  "scripts": {
+    "render": "node render.js",
+    "still": "node render.js --still 40"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}

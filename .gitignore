@@ -1,0 +1,22 @@
+# сборка
+build/
+out/
+cmake-build-*/
+*.exe
+*.o
+*.obj
+
+# тестовые данные
+*.log
+
+# Node (рендер видео)
+node_modules/
+video/still.png
+video/frames/
+
+# IDE / ОС
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
