@@ -2,10 +2,6 @@
 
 Быстрый многопоточный парсер и анализатор логов на C++20. Читает файл через `mmap`, разбирает строки без копирования и аллокаций, делит работу между потоками без мьютексов и выдаёт отчёт: уровни, самые шумные сервисы, самые частые ошибки, перцентили задержек.
 
-[![Демо-ролик](docs/preview.gif)](docs/demo.mp4)
-
-> Нажмите на превью, чтобы открыть полный ролик (73 с, [docs/demo.mp4](docs/demo.mp4)).
-
 ## Результат
 
 Тестовый лог: 5 млн строк, 352 МиБ, 12 логических потоков, файл в кэше ОС (Windows 11, GCC 16.2 `-O2`).
@@ -133,8 +129,6 @@ logengine sample.log --grep timeout --from 2026-10-01T01:00:00.000Z --to 2026-10
 include/le/    time_util.hpp  mapped_file.hpp  flat_map.hpp  parser.hpp  stats.hpp  engine.hpp
 src/main.cpp   CLI и отчёт
 tools/         gen_logs.cpp, генератор тестовых логов
-video/         исходники демо-ролика (HTML) и скрипт рендера в MP4
-docs/          demo.mp4, preview.gif
 ```
 
 ## Ограничения
@@ -144,13 +138,3 @@ docs/          demo.mp4, preview.gif
 - Файл нельзя изменять или обрезать, пока он отображён в память.
 - Протестировано только на Windows (GCC/MinGW). Ветка `mmap` для Linux/macOS написана, но не собиралась.
 - Сборка через CMake не проверялась, проверена только прямая сборка `g++`.
-
-## Пересборка демо-ролика
-
-Ролик это HTML-страница ([`video/index.html`](video/index.html)), которую скрипт покадрово снимает в Chrome/Edge и собирает в MP4 через ffmpeg. Нужны Node.js, ffmpeg в `PATH` (или `FFMPEG_PATH`) и Chrome/Edge (или `BROWSER_PATH`).
-
-```bash
-cd video
-npm install
-npm run render      # -> docs/demo.mp4
-```

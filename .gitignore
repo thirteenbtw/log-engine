@@ -9,11 +9,6 @@ cmake-build-*/
 # тестовые данные
 *.log
 
-# Node (рендер видео)
-node_modules/
-video/still.png
-video/frames/
-
 # IDE / ОС
 .vscode/
 .idea/
